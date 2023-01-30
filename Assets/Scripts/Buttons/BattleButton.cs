@@ -22,6 +22,7 @@ public class BattleButton : MonoBehaviour
         if(_gameManager.didBattle == false)
         {
             _gameManager.didBattle = true;
+            _gameManager.didMove = true;
             int currentTurnPieceRoll = Random.Range(0, 100);
             int enemyPieceRoll = Random.Range(0, 100);
 

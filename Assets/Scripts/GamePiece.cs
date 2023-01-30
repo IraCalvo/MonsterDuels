@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class GamePiece : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
@@ -154,6 +155,8 @@ public class GamePiece : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
             {
                 if (playerOwnership == PlayerOwnership.PlayerTwo)
                 {
+                    PlayerPrefs.DeleteAll();
+                    SceneManager.LoadScene("TeamBuilder");
                     Debug.Log("player 2 wins");
                 }
             }
@@ -161,6 +164,8 @@ public class GamePiece : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
             {
                 if (playerOwnership == PlayerOwnership.PlayerOne)
                 {
+                    PlayerPrefs.DeleteAll();
+                    SceneManager.LoadScene("TeamBuilder");
                     Debug.Log("player 1 wins");
                 }
             }
